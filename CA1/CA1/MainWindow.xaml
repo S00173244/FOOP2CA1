@@ -5,8 +5,84 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CA1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+        Title="MainWindow" Height="550" Width="524">
+    <Grid Width="524">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+       
+
+        <Grid Name="TopContainer" Grid.Row="0"  Margin="5" Width="{Binding ActualWidth, ElementName=parentElementName}">
+            <Border Background="DarkGray" BorderThickness="4" BorderBrush="Yellow" CornerRadius="5" >
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Grid Width="125">
+                        <Image></Image>
+                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center"></RadioButton>
+                    </Grid>
+                    <Grid Width="125">
+                        <Image></Image>
+                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center"></RadioButton>
+                    </Grid>
+                    <Grid Width="125">
+                        <Image></Image>
+                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center"></RadioButton>
+                    </Grid>
+                    <Grid Width="125">
+                        <Image></Image>
+                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center"></RadioButton>
+                    </Grid>
+
+                </StackPanel>
+
+
+
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="1" Name="MiddleContainer">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+                            
+            <Grid Column="0" Name="MiddleContainer_Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" Margin="20,0">
+                    <Label Width="100" Content="Sort By"></Label>
+                    <ComboBox Width="100" Height="25" Name="cbox_SortBy"></ComboBox>
+                </StackPanel>
+                
+                
+            </Grid>
+
+            <Grid Column ="1" Name="MiddleContainer_Right">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+        </Grid>
+
+        <!--<StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">
+            <Button Content="Add" Width="100" Margin="10" Height="25"/>
+            <Button Content="Add" Width="100" Margin="10" Height="25"/>
+            <Button Content="Add" Width="100" Margin="10" Height="25"/>
+            <Button Content="Add" Width="100" Margin="10" Height="25"/>
+            <Button Content="Add" Width="100" Margin="10" Height="25"/>
+        </StackPanel>-->
+
+        <Grid Grid.Column="0" Grid.Row="3">
+            
+        </Grid>
         
     </Grid>
+
 </Window>
