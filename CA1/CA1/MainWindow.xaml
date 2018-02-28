@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CA1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="524">
+        Title="MainWindow" Height="550" Width="524" Loaded="Window_Loaded">
     <Grid Width="524" Background="DarkGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
@@ -13,31 +13,29 @@
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
 
-
-
         <Grid Name="TopContainer" Grid.Row="0"  Margin="5" Width="{Binding ActualWidth, ElementName=parentElementName}">
             <Border BorderThickness="4" BorderBrush="Yellow" CornerRadius="5" >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
                     <StackPanel Width="125" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Image></Image>
-                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center"></RadioButton>
-                        <Label Name="lbl_All" Content="All"></Label>
+                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center" Content="All" Name="rd_All" Checked="rd_Checked"></RadioButton>
+                        
                     </StackPanel>
                     <StackPanel Width="125" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Image></Image>
-                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center"></RadioButton>
-                        <Label Name="lbl_Cars" Content="Cars"></Label>
+                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Cars" Name="rd_Car" Checked="rd_Checked"></RadioButton>
+                        
                     </StackPanel>
                     <StackPanel Width="125" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Image></Image>
-                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center"></RadioButton>
-                        <Label Name="lbl_Bikes" Content="Bikes"></Label>
+                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Bikes" Name="rd_Bike" Checked="rd_Checked"></RadioButton>
+                        
                     </StackPanel>
                     <StackPanel Width="125" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Image></Image>
-                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center"></RadioButton>
-                        <Label Name="lbl_Vans" Content="Vans"></Label>
+                        <RadioButton GroupName="vehicleType" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Vans" Name="rd_Van" Checked="rd_Checked"></RadioButton>
+                       
                     </StackPanel>
 
                 </StackPanel>
@@ -62,10 +60,10 @@
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0">
                     <Label Width="100" Content="Sort By"></Label>
-                    <ComboBox Width="100" Height="25" Name="cbox_SortBy"></ComboBox>
+                    <ComboBox Width="100" Height="25" Name="cbox_SortBy" SelectionChanged="cbox_SortBy_Selected"></ComboBox>
                 </StackPanel>
 
-                <ListBox Grid.Row="1" Name="lbox_vehicleList">
+                <ListBox Grid.Row="1" Name="lbox_vehicleList" SelectionChanged="lbox_vehicleList_SelectionChanged">
 
                 </ListBox>
 
@@ -80,7 +78,7 @@
 
 
                 <Label Grid.Row="0" Name="lbl_VehicleDetails" Content="Vehicle Details" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-                <Image Grid.Row="1"></Image>
+                <Image Name="img_Vehicle" Grid.Row="1"></Image>
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -93,7 +91,7 @@
                         <Label Name="lbl_Price" Content="Price :"></Label>
                         <Label Name="lbl_Year" Content="Year :"></Label>
                         <Label Name="lbl_Mileage" Content="Mileage :"></Label>
-                        <Label Name="lbl_Engine" Content="Engine :"></Label>
+                        <Label Name="lbl_Color" Content="Color :"></Label>
                         <Label Name="lbl_Description" Content="Description :"></Label>
                     </StackPanel>
                     <StackPanel Grid.Column="1">
@@ -102,7 +100,7 @@
                         <Label Name="lbl_PriceValue" Content="Price :"></Label>
                         <Label Name="lbl_YearValue" Content="Year :"></Label>
                         <Label Name="lbl_MileageValue" Content="Mileage :"></Label>
-                        <Label Name="lbl_EngineValue" Content="Engine :"></Label>
+                        <Label Name="lbl_ColorValue" Content="Color :"></Label>
                         <Label Name="lbl_DescriptionValue" Content="Description :"></Label>
                     </StackPanel>
                 </Grid>
@@ -125,11 +123,11 @@
 
         <Grid Name="BottomContainer" Grid.Column="0" Grid.Row="3">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                <Button Width="75" Height="20" Name="btn_Load" Content="Load" Margin="5,0"></Button>
-                <Button Width="75" Height="20" Name="btn_Save" Content="Save" Margin="5,0"></Button>
-                <Button Width="75" Height="20" Name="btn_Add" Content="Add" Margin="5,0"></Button>
-                <Button Width="75" Height="20" Name="btn_Edit" Content="Edit" Margin="5,0"></Button>
-                <Button Width="75" Height="20" Name="btn_Delete" Content="Delete" Margin="5,0"></Button>
+                <Button Width="75" Height="20" Name="btn_Load" Content="Load" Margin="5,0" Click="btn_Load_Click"></Button>
+                <Button Width="75" Height="20" Name="btn_Save" Content="Save" Margin="5,0" Click="btn_Save_Click"></Button>
+                <Button Width="75" Height="20" Name="btn_Add" Content="Add" Margin="5,0" Click="btn_Add_Click"></Button>
+                <Button Width="75" Height="20" Name="btn_Edit" Content="Edit" Margin="5,0" Click="btn_Edit_Click"></Button>
+                <Button Width="75" Height="20" Name="btn_Delete" Content="Delete" Margin="5,0" Click="btn_Delete_Click"></Button>
             </StackPanel>
         </Grid>
 
