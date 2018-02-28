@@ -1,4 +1,5 @@
 ﻿using CA1.Classes;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -120,7 +121,7 @@ namespace CA1
 
         private void btn_Load_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btn_Save_Click(object sender, RoutedEventArgs e)

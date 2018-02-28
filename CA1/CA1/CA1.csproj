@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="Classes\Bike.cs" />
     <Compile Include="Classes\Car.cs" />
+    <Compile Include="Classes\DataHandler.cs" />
     <Compile Include="Classes\Van.cs" />
     <Compile Include="Classes\Vehicle.cs" />
     <Compile Include="EditVehicleWindow.xaml.cs">
